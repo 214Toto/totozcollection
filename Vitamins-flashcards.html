@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Biochemistry Term 3 Papers </title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('your-background-image.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    .quiz-container {
+        max-width: 340px;
+        margin: 50px auto;
+        background: rgba(0, 0, 0, 0.7);
+        /* padding: 20px; */
+        padding-left: 15px;
+        border-radius: 8px;
+        color: #fff;
+    }
+    .nav-buttons-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+    .nav-buttons {
+        display: inline-flex;
+    }
+    .nav-buttons button {
+        margin: 5px;
+        padding: 10px 15px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+        flex-shrink: 0;
+    }
+    .nav-buttons button:hover {
+        background: #555;
+    }
+    .nav-buttons button.active {
+        background: #007BFF;
+    }
+    .flashcards {
+        display: none; /* Hide by default */
+        /* background: rgba(255, 255, 255, 0.1); */
+        /* padding: 15px; */
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+  <main>
+    <header class="header">
+      <a href="index.html" class="logo"> CBU SOM </a>
+      <h2> Totoz Collection ! </h2>
+      <a href="Micronutrients-flashcards-T3.html" class="nav"> Back </a>
+    </header>
+
+    <div class="container">
+      <div class="quiz-container">
+        <div class="nav-buttons-container">
+            <div class="nav-buttons">
+                <button onclick="showFlashcards(1)" class="active">Vitamin B1</button>
+                <button onclick="showFlashcards(2)">Vitamin B2</button>
+                <button onclick="showFlashcards(3)">Vitamin B3</button>
+                <button onclick="showFlashcards(4)">Vitamin B6</button>
+                <button onclick="showFlashcards(5)">Vitamin B7</button>
+                <button onclick="showFlashcards(6)">Vitamin B12</button>
+            </div>
+        </div>
+
+        <!-- Niacin (B3) Flashcards -->
+        <div id="flashcards1" class="flashcards">
+          
+        </div>
+
+        <!-- Vitamin B1 Flashcards -->
+        <div id="flashcards2" class="flashcards">
+          
+        </div>
+
+        <!-- Vitamin B2 Flashcards -->
+        <div id="flashcards3" class="flashcards">
+          
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Niacin can go by other names, that may also act as a source of The same vitamin, What names are those ? </div>
+            <div class="back">&#10003; Nicotinic Acid
+                <br>&#10003; Nicotinamide
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Niacin is a simple derivative of ? </div>
+            <div class="back">&#10003; Pyridine </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What type of reactions is niacin mainly invloved in </div>
+            <div class="back">&#10003; Oxidoreductase rxns </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> The active forms of Niacin are ? </div>
+            <div class="back">&#10003;  Nicotinamide adenine dinucleotide (NAD+)
+                <br>&#10003; Nicotinamide adenine dinucleotide phosphate (NADP+)
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What coenzymes depend of niacin as a key component </div>
+            <div class="back">&#10003;  Nicotinamide adenine dinucleotide (NAD+)
+                <br>&#10003; Nicotinamide adenine dinucleotide phosphate (NADP+)
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> The amino acid from which Niacin can be derived from is ? </div>
+            <div class="back">&#10003; Tryptophan </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What is the RDA for Niacin </div>
+            <div class="back">&#10003; 15 to 20 mg  </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> How does excessive intake of maize and sorghum lead to Niacin deficiency</div>
+            <div class="back">&#10003; Maize contains niacin (vitamin B3), but niacin in its natural form in maize is bound to other compounds, making it biologically unavailable for absorption by the human body.
+                <br>&#10003;Sorghum (jowar) contains compounds that act as niacin antagonists, which means they interfere with niacin absorption and utilization in the body
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> How will deficiency of vitamin B6 cause niacin deficiency </div>
+            <div class="back">&#10003; vitamin B6  is involved as a coenzyme in the pathway of synthesis of niacin from tryptophan. </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Explain how a person having Malignant carcinoid syndrome might be predisposed to niacin deficiency </div>
+            <div class="back">&#10003;  tryptophan metabolism is diverted to formation of serotonin </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What is Hartnup disease and how does it cause niacin deficiency </div>
+            <div class="back">&#10003; it is a genetic disorder in which tryptophan absorption and transportation is impaired. </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Isoniazid predisposes niacin deficiency..... True or FALSE...... support your answer 
+            </div>
+            <div class="back">&#10003; True
+                <br>&#10003; soniazid is a medication used primarily to treat tuberculosis (TB) but it  interferes with the conversion of tryptophan to niacin
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Name a therapeutiv use of Vitamin B3 </div>
+            <div class="back">&#10003; </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Draw the chemical structure of niacin and Nicotinamide </div>
+            <div class="back"> <img src="niacin.png" alt=""> </div>
+          </div>
+        </div>
+
+        <!-- Vitamin B6 Flashcards -->
+        <div id="flashcards4" class="flashcards">
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Vitamin B6 is a mixture of ? </div>
+            <div class="back">&#10003; Pyridoxine 
+              <br>&#10003; pyridoxal
+              <br>&#10003; pyridoxamine
+              <br>&#10003; thier 5' phosphates
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> WHat is the activated form of vitamin B6 </div>
+            <div class="back">&#10003;  Pyridoxal phosphate (PLP) 
+              <br>&#10003; formed from phosphorylation of all three forms of vitamin B6
+            </div>
+          </div>
+      
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> When and why does the requirement of this vitamin increase </div>
+            <div class="back">&#10003; When &rightarrow; increase in protein intake
+              <br>&#10003; Why &rightarrow; it plays a major role in amino acid metabolism 
+            </div>
+          </div>
+      
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What diagnostic test can be done to assess the levels of vitamin B6 in the body </div>
+            <div class="back">&#10003; checking activity of Aspartate transaminase in RBCs
+            </div>
+          </div>
+          
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Severe deficiency of biotin leads to ? </div>
+            <div class="back">&#10003; Anemia </div>
+          </div>  
+          
+        </div>
+
+        <div id="flashcards5" class="flashcards">
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What are the other names for Biotin </div>
+            <div class="back">&#10003; Vitamin B7
+              <br>&#10003; Vitamin H
+            </div>
+          </div>
+
+          
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What is the main source of Biotin for the body</div>
+            <div class="back">&#10003; Intestinal flora
+            </div>
+          </div>  
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Biotin acts as a coenzyme for enzymes in what type of Reactions, give specific examples </div>
+            <div class="back">&#10003; Carboxylation Reactions
+              <br>&#10003; acetyl-CoA carboxylase in Lipogenesis
+              <br>&#10003; pyruvate carboxylase in Gluconeogenesis
+            </div>
+          </div>  
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Explain the concepts of Inherited single or multiple carboxylase deficiencies in relation to Biotin
+            </div>
+            <div class="back">&#10003; Single carboxylase deficiencies is when a person has a deficiency 
+              <br>&#10003; 
+            </div>
+          </div>  
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front">  </div>
+            <div class="back">&#10003;  </div>
+          </div>
+
+        </div>
+
+        <div id="flashcards6" class="flashcards">
+          
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> WHat is the other name for Vitamin B12 </div>
+            <div class="back">&#10003; Cobalamin </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What is the main source of vitamin B12 </div>
+            <div class="back">&#10003; Found only in foods of animal origin
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front">  </div>
+            <div class="back">&#10003;  </div>
+          </div>
+
+          
+
+
+
+
+
+        </div>
+
+        <div id="flashcards7" class="flashcards">
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> What are some of the uses of Folic acid </div>
+            <div class="back">&#10003; DNA synthesis
+              <br>&#10003; repair DNA, and methylate DNA 
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front">  What are some of the results of Folate deficiency </div>
+            <div class="back">&#10003; Neural tubule defects in developing embryo
+              <br>&#10003; Nerve damage and limb numbness
+            </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front"> Explain the effect of Methotrexate, an anti- </div>
+            <div class="back">&#10003;  </div>
+          </div>
+
+
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front">  </div>
+            <div class="back">&#10003;  </div>
+          </div>
+
+          <div class="card" onclick="flipCard(this)">
+            <div class="front">  </div>
+            <div class="back">&#10003;  </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <h1> ToTo </h1>
+    </div>
+  </main>
+
+  <script>
+    function flipCard(card) {
+      card.classList.toggle("flipped");
+    }
+
+    // Show the first flashcards set by default
+    document.getElementById('flashcards1').style.display = 'block';
+
+    function showFlashcards(flashcardsNumber) {
+        // Hide all flashcards
+        const flashcards = document.querySelectorAll('.flashcards');
+        flashcards.forEach(flashcard => {
+            flashcard.style.display = 'none';
+        });
+
+        // Remove active class from all buttons
+        const buttons = document.querySelectorAll('.nav-buttons button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show the selected flashcards
+        const selectedFlashcards = document.getElementById(`flashcards${flashcardsNumber}`);
+        selectedFlashcards.style.display = 'block';
+
+        // Add active class to the selected button
+        buttons[flashcardsNumber - 1].classList.add('active');
+    }
+  </script>
+</body>
+</html>

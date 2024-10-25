@@ -1,0 +1,580 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background: #060625;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav {
+  color: #ffffff;
+  text-align: center;
+  padding-left: 1.7rem;
+  text-decoration: none;
+  border-left: 2px solid #ffffff;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 28px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header h2 {
+  color: #ffffff;
+  text-align: center;
+  padding-left: 1.7rem;
+  border-left: 2px solid #ffffff;
+}
+
+.container {
+  background-image: url(Heart1.jpg);
+  background-position: center;
+  height: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.laboratory-science {
+  background-image: url(lab.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container h1 {
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #000000;
+}
+
+.intro {
+  color: #e6a123;
+  text-align: center;
+  font-weight: bold;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.choose {
+  text-align: center;
+}
+.choose a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn1 {
+  margin: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background: #504d37;
+  border: 3px dotted #b9a912;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn1 :hover {
+  cursor: pointer;
+}
+
+.btn9 {
+  height: 3.5rem;
+  margin: 2rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  background: #504d37;
+  border: 3px dotted #b9a912;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn9 :hover {
+  cursor: pointer;
+}
+
+.terms {
+  display: none;
+}
+
+.terms a {
+  font-size: 1.5rem;
+  color: #b4801f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.terms a:hover {
+  color: #dd1212;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  background-color: #615b24;
+}
+
+.footer h1 {
+  color: #fff;
+  padding-top: .7rem;
+  font-size: 3rem;
+}
+
+.card-container {
+  background-image: url(Heart1.jpg);
+  background-position: center;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;  /* Arranges the cards vertically */
+  gap: 3rem;  /* Adds 3rem of space between the cards */
+}
+
+.card {
+  width: 300px;
+  margin-bottom: 3rem;
+  height: 200px;
+  perspective: 1000px;
+  /* border-radius: 6px; */
+  cursor: pointer;
+  position: relative;
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 20px;
+  /* text-align: center; */
+  transition: transform 0.6s;
+}
+
+.front {
+  background-color: #100f4b;
+  color: #ffffff;
+}
+
+.back {
+  background-color: #009688;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  text-align: left;
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0deg);
+}
+.cortical {
+  width: 350px;
+  height: 200px;
+}
+#searchBar {
+    width: 80%;
+    color: #100f4b;
+    padding: 10px;
+    font-size: 18px;
+    margin: 20px auto;
+    display: block;
+    border: 4px double #ad9e10;
+    border-radius: 6rem;
+}
+.word {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.word-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #0f0d80;
+  font-size: 18px;
+}
+
+p, ul {
+  font-size: 16px;
+  color: #0f0d80;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+ul ul {
+  padding-left: 20px;
+}
+
+ul li:before {
+  content: "•";
+  color: #0f0d80;
+  margin-right: 10px;
+}
+
+.word ul li ul li:before {
+  content: "—";
+  color: #0f0d80;
+  margin-right: 8px;
+}
+table {
+  /* width: 150px; */
+  font-size: 20px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #615b24;
+  border-radius: 3px;
+
+}
+td {
+  padding: 10px;
+  /* font-size: 50px; */
+  border: 3px double #150c96;
+}
+.sum-button {
+  background-color: #1422a3;
+  color: white;
+  border: 3px dotted #615b24;
+  border-radius: 6px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.sum-button:hover {
+  transition: .5s;
+  background-color: #615b24;
+}
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.tab-container {
+  text-align: center;
+   overflow: hidden;
+   background-color: #1e2124;
+   border-bottom: 1px solid #7289da;
+}
+.tab-link {
+   background-color: #1e2124;
+   border-right: 2px solid white;
+   color: white;
+   /* border: none; */
+   outline: none;
+   padding: 10px 20px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+.tab-link:hover, .tab-link.active {
+   background-color: #7289da;
+}
+.tab-content {
+  /* text-align: center; */
+   padding: 20px;
+   background-image: url(sketch.jpg);
+   background-position: center;
+   background-size: cover;
+   /* background-color: #2c2f33; */
+   border-radius: 5px;
+}
+.accordion-button {
+  /* text-align: center; */
+  border-radius: 20px;
+   margin-bottom: 3rem;
+   background-color: #7289da;
+   color: white;
+   padding: 15px;
+   /* padding-left: 8.7rem; */
+   border: none;
+   height: 3rem;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+   outline: none;
+   transition: background-color 0.3s;
+}
+.accordion-button1 {
+  /* text-align: center; */
+  border-radius: 20px;
+   margin-bottom: 3rem;
+   background-color: #7289da;
+   color: white;
+   padding: 15px;
+   /* padding-left: 8.7rem; */
+   border: none;
+   height: 3rem;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+   outline: none;
+   transition: background-color 0.3s;
+}
+
+.accordion-button2 {
+  /* text-align: center; */
+  border-radius: 20px;
+   margin-bottom: 3rem;
+   background-color: #7289da;
+   color: white;
+   padding: 15px;
+   /* padding-left: 8.7rem; */
+   border: none;
+   height: 3rem;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+   outline: none;
+   transition: background-color 0.3s;
+}
+.accordion-button:hover {
+   background-color: #99aab5;
+}
+.accordion-content {
+   display: none;
+   background-color: #23272a;
+   padding: 15px;
+   border-top: 1px solid #7289da;
+}
+.accordion-button.active + .accordion-content {
+   display: block;
+}
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 20px;
+   padding: 20px;
+}
+.grid-item {
+   background-color: #2e3338;
+   border-radius: 20px;
+   padding: 15px;
+   text-align: center;
+   transition: transform 0.3s;
+}
+.grid-item:hover {
+   transform: translateY(-5px);
+}
+.grid-item h3 {
+   color: #7289da;
+   font-size: 18px;
+   margin: 0;
+}
+.grid-item a {
+   color: #ffffff;
+   background-color: #7289da;
+   padding: 8px 12px;
+   border-radius: 5px;
+   text-decoration: none;
+   display: inline-block;
+   margin-top: 10px;
+}
+.grid-item a:hover {
+   background-color: #99aab5;
+}
+.background {
+  background-image: url("molecules1.jpeg");
+}
+.background1 {
+  background-image: url("molecules2.jpeg");
+}
+.background2 {
+  background-image: url("physiology.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.background3 {
+  background-image: url("Molecules3.jpg");
+}
+.background4 {
+  background-image: url("Pharmacy2.png");
+  background-size: cover;
+}
+.background5 {
+  background-image: url("public-health.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.background6 {
+  background-image: url("society-medicine.jpg");
+}
+.background7 {
+  background-image: url("embryology2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.background8 {
+  background-image: url("clinical-science.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.lab-sciences {
+  background-image: url(lab-science.jpg);
+  background-size: cover;
+}
+.lab-science {
+  background-position: center;
+  background-image: url(biochem3.jpg);
+}
+.EmbryologyT3 {
+  background-image: url(embryology1.jpg);
+  background-position: center;
+}
+.PhysiologyT3 {
+  background-image: url(Physiology-art.jpg);
+  background-position: center;
+}
+.containerz {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+.description {
+  color: #009688;
+}
+.topicz {
+  background-color: #23272a;
+  width: 270px;
+  padding: 15px;
+  border: 3px solid #7289da;
+  border-radius: 8px;
+  box-sizing: border-box;
+  opacity: 0; /* Initially hidden */
+}
+h1 {
+  text-align: center;
+  color: #7289da;
+}
+.topicz h2 {
+  color: #7289da;
+  margin-top: 0;
+}
+.links a {
+  color: #99aab5;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Animation for sliding in from the left */
+@keyframes slide-in-left {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Animation for sliding in from the right */
+@keyframes slide-in-right {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-10px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+        /* Applying the sliding and floating animations */
+        #slide-left {
+          animation: slide-in-left 1s forwards, float 3s ease-in-out infinite;
+          animation-delay: 0s, 1s; /* Start floating after sliding completes */
+      }
+
+      #slide-right {
+          animation: slide-in-right 1s forwards, float 3s ease-in-out infinite;
+          animation-delay: 0.5s, 1.5s; /* Delay for sliding and floating */
+      }
+
+      .links a {
+        display: inline-block;
+        margin: 8px 10px 0 0;
+        padding: 10px 15px;
+        background-color: #3b3b5f;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .links a:hover {
+        background-color: #f39c12;
+        transform: scale(1.05);
+    }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Gross Term 3 Flashcards </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <main>
+    <header class="header">
+      <a href="index.html" class="logo"> CBU SOM </a>
+
+  
+      <h2> Totoz Collection ! </h2>
+
+      <a href="inguinal-quiz.html" class="nav"> Back </a>
+
+
+    </header>
+
+    <div class="container">
+      <img src="Log.png">
+
+      <h1>Match the Items!</h1>
+      <p>Select a layer of the abdominal Wall then select what it will become as it covers the testes and Spermatic Cord</p>
+  
+      <table>
+          <tr>
+              <th>Layer of abdominal wall</th>
+              <th> Covers the Testes </th>
+          </tr>
+          <tr>
+              <td>
+                  <select id="columnA">
+                    <option value="2"> superficial Fascia </option>
+                    <option value="1"> Skin </option>
+                    <option value="3"> External oblique Muscle </option>
+                    <option value="4"> Internal oblique Muscle </option>
+                    <option value="5"> transverse Abdominus Muscle </option>
+                    <option value="6"> transversalis Fascia </option>
+                    <option value="7"> Extraperitoneal Fat </option>
+                    <option value="8"> Parietal Peritoneum </option>
+                  </select>
+              </td>
+              <td>
+                  <select id="columnB">
+                      <option value="5"> Does not Continue Into Scrotal Area </option>
+                      <option value="2"> Colles Fascia and Dartos muscle </option>
+                      <option value="6"> Internal Spermatic Fascia </option>
+                      <option value="8"> Tunica Vaginalis </option>
+                      <option value="7"> Extraperitoneal Fat </option>
+                      <option value="4"> Cremasteric Fascia and muscle </option>
+                      <option value="1">Skin</option>
+                      <option value="3"> External Spermatic Fascia </option>
+                  </select>
+              </td>
+          </tr>
+      </table>
+  
+      <button class="sum-button" onclick="checkMatch()">Check Match</button>
+  
+      <div class="result" id="result"></div>
+  
+      <script>
+          function checkMatch() {
+              const columnA = document.getElementById("columnA");
+              const columnB = document.getElementById("columnB");
+              const result = document.getElementById("result");
+  
+              if (columnA.value === columnB.value) {
+                  result.textContent = "Correct Match!";
+                  result.style.color = "green";
+  
+                  // Remove the matched option from both columns
+                  columnA.remove(columnA.selectedIndex);
+                  columnB.remove(columnB.selectedIndex);
+                //   columnB.remove(columnB.selectedIndex);
+  
+                  // If no more options are available, end the game
+                  if (columnA.length === 0 || columnB.length === 0) {
+                      result.textContent = "Congratulations! You've matched all items!";
+                      document.querySelector(".button").disabled = true;
+                  }
+              } else {
+                  result.textContent = "Incorrect Match, Try Again!";
+                  result.style.color = "red";
+              }
+          }
+      </script>
+  
+      
+    </div>
+
+</body>
+</html>
