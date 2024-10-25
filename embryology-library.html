@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 60%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .result-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .result-item p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .result-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #555;
+            margin-top: 20px;
+        }
+        /* img {
+            height: 300px ;
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Anatomy Search</h1>
+
+        <!-- Search Form -->
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for drugs, classes, or mechanisms...">
+            <button class="search-btn" onclick="performSearch()">Search</button>
+        </div>
+
+        <!-- Search Results -->
+        <div id="results" class="results"></div>
+
+        <div id="noResults" class="no-results" style="display:none;">No results found</div>
+    </div>
+
+    <script>
+        // Mock search data with image URLs
+        const drugDatabase = [
+            { 
+                name: 'Umbilical arteries',
+                class: 'Extensions of the caudal part of the Dorasl Aortae',
+                site: 'Connecting Stalk',
+                period: '3rd Week of development',
+                function: 'carry deoxygenated blood and waste products from the developing fetus back to the placenta for exchange with maternal blood'
+                
+            },
+            { 
+                name: 'Vitelline arteries',
+                class: 'Branches of the Dorsal Aortae that sprout into the yolk sac',
+                site: 'Yolk Sac',
+                period: '3rd Week of development',
+                function: '',
+            },
+            { 
+                name: 'Umbilical Veins',
+                class: '',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            { 
+                name: ' ',
+                class: ' ',
+                site: ' ',
+                period: ' ',
+                function: ''
+            },
+            
+
+        ];
+
+        function performSearch() {
+            // Get the search term from the input
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Clear previous results
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+            document.getElementById('noResults').style.display = 'none';
+
+            // Filter the database for matching results
+            const filteredResults = drugDatabase.filter(drug =>
+                drug.name.toLowerCase().includes(searchTerm) ||
+                drug.class.toLowerCase().includes(searchTerm) ||
+                drug.site.toLowerCase().includes(searchTerm)
+            );
+
+            // Display the results
+            if (filteredResults.length > 0) {
+                filteredResults.forEach(drug => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('result-item');
+                    resultItem.innerHTML = `
+                        <img src="${drug.image}" alt="${drug.name}">
+                        <div>
+                            <h3>${drug.name}</h3>
+                            <p><strong>Description:</strong> ${drug.class}</p>
+                            <p><strong>Site:</strong> ${drug.site}</p>
+                            <p><strong>Period of Development:</strong> ${drug.period}</p>
+                            
+                        </div>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                document.getElementById('noResults').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

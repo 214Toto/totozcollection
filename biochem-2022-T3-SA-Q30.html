@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left ;
+            width: 300px;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .options button:hover {
+            background-color: #0056b3;
+        }
+
+        .options button.correct {
+            background-color: #28a745 !important;
+        }
+
+        .options button.wrong {
+            background-color: #dc3545 !important;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #next-button, #result-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #next-button:hover, #result-button:hover {
+            background-color: #0056b3;
+        }
+
+        .chapwa {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .result-box {
+            color: #c40894;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.9);
+            width: 300px;
+            height: 400px;
+            background: transparent;
+            border: 2px solid #c40894;
+            border-radius: 6px;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 1;
+            pointer-events: auto;
+            transition: .3s ease;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .percentage-container {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0px 40px;
+        }
+
+        .circular-progress {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background: conic-gradient(#c40094 3.6deg, rgba(255, 255, 255, .4) 0deg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circular-progress::before {
+            content: '';
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            background: seagreen;
+            border-radius: 50%;
+            background: rgb(61, 65, 61);
+        }
+
+        .progress-value {
+            position: relative;
+            font-size: 45px;
+            font-weight: 600;
+        }
+
+        .score-text {
+            font-size: 26px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .result-box .buttons {
+            display: flex;
+        }
+
+        .buttons button{
+            width: 130px;
+            height: 47px;
+            outline: none;
+            background: #c40094;
+            border: 2px solid #c40094;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+            margin: 0 20px 20px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .buttons button:nth-child(1):hover {
+            background: #950170;
+            color: #fff;
+        }
+
+        .buttons button:nth-child(2) {
+            background: transparent;
+            color: #c40094;
+        }
+
+        .buttons button:nth-child(2):hover {
+            background: #c40094;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- <h1>MCQ Quiz</h1> -->
+        <div id="question-container">
+            <h2 id="question">Question will appear here</h2>
+            <div class="options">
+                <button class="option" onclick="checkAnswer(this)">Option 1</button>
+                <button class="option" onclick="checkAnswer(this)">Option 2</button>
+                <button class="option" onclick="checkAnswer(this)">Option 3</button>
+                <button class="option" onclick="checkAnswer(this)">Option 4</button>
+                <button class="option" onclick="checkAnswer(this)">Option 5</button>
+            </div>
+            <p id="feedback"></p>
+            <button id="next-button" onclick="nextQuestion()">Next Question</button>
+            <button id="result-button" onclick="showResults()">See Results</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+                    {
+                        question: "Which two components of energy input and/or output should you attempt to modify in a person who is overweight or obese?",
+                        options: ["Basal energy expenditure and food intake", "Food intake and physical work", "Food intake and specific dynamic action", "Physical work and specific dynamic action", "BMI and physical work"],
+                        correctAnswer: "Food intake and physical work",
+                        explanation: "Modifying food intake and increasing physical activity are key for weight loss."
+                    },
+                    {
+                        question: "Which of the following is correct about dietary fiber?",
+                        options: ["It is digested in a way similar to that of dietary carbohydrate", "It enhances triglyceride formation in the liver", "It is found primarily in animal products", "It enhances the rate at which chyme moves through the intestine", "It tends to decrease stool bulk"],
+                        correctAnswer: "It enhances the rate at which chyme moves through the intestine",
+                        explanation: "Dietary fiber increases the speed at which food moves through the intestine."
+                    },
+                    {
+                        question: "Which of the following statements is false?",
+                        options: ["Saturated fats should predominate over unsaturated fats in the diet", "Dietary cholesterol intake should be less than 300mg/day", "Total fat intake should be 30% or less of total calories", "Cholesterol is not an essential nutrient", "Arachidonic acid can be synthesized from linoleic acid"],
+                        correctAnswer: "Saturated fats should predominate over unsaturated fats in the diet",
+                        explanation: "Unsaturated fats are healthier than saturated fats."
+                    },
+                    {
+                        question: "Body Mass Index (BMI) is:",
+                        options: ["A way to measure the central obesity", "Synonymous with obesity", "A measure of lean body mass to fat mass", "A measure of obesity by considering both weight and height", "Anonymous with obesity"],
+                        correctAnswer: "A measure of obesity by considering both weight and height",
+                        explanation: "BMI is calculated using a person’s weight and height."
+                    },
+                    {
+                        question: "The following are complications of obesity, except...",
+                        options: ["Diabetes mellitus", "Gall stones", "Obstructive sleep apnea", "Arthritis", "Coronary artery disease"],
+                        correctAnswer: "Arthritis",
+                        explanation: "While arthritis is associated with obesity, it is not a direct complication."
+                    },
+                    {
+                        question: "In a malnourished surgical patient...",
+                        options: ["The immune function can be expected to be normal", "It is best to overfeed the patient because excess nutrient speeds healing", "Total Parenteral Nutrition (TPN) is usually the best choice", "Wound healing can be expected to be compromised", "Serum albumin is normally in the range of 4-4.5g/dl"],
+                        correctAnswer: "Wound healing can be expected to be compromised",
+                        explanation: "Wound healing is typically slower in malnourished patients."
+                    },
+                    {
+                        question: "The best criterion of a surgical patient's nutritional state is...",
+                        options: ["Nitrogen balance", "Mid-arm muscle circumference", "A determination of plasma albumin", "Functional impairment, such as inability to walk, work etc.", "Subjective Global Assessment (SGA)"],
+                        correctAnswer: "Nitrogen balance",
+                        explanation: "Nitrogen balance is a key indicator of nutritional status."
+                    },
+                    {
+                        question: "Which one of these is not a parameter under Subjective Global Assessment (SGA)?",
+                        options: ["Recent weight change", "Dietary intake", "Gastrointestinal symptoms", "Physical signs, such as muscle wasting, edema and skin rash", "Nitrogen balance"],
+                        correctAnswer: "Nitrogen balance",
+                        explanation: "Nitrogen balance is not part of the Subjective Global Assessment."
+                    },
+                    {
+                        question: "All of the following are absolute contradictions to enteral nutrition except...",
+                        options: ["Intractable vomiting", "Severe diarrhoea", "Paralytic ileus", "Severe pancreatitis", "Lack of access to the gastrointestinal tract"],
+                        correctAnswer: "Lack of access to the gastrointestinal tract",
+                        explanation: "Enteral nutrition requires access to the GI tract."
+                    },
+                    {
+                        question: "A substance needed by the body for growth, energy, repair and maintenance is known as:",
+                        options: ["Nutrient", "Carbohydrate", "Calorie", "Fatty acid", "Joule"],
+                        correctAnswer: "Nutrient",
+                        explanation: "Nutrients are essential for growth, energy, repair, and maintenance."
+                    },
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = currentQuestion.question;
+            const buttons = document.querySelectorAll(".option");
+            buttons.forEach((btn, index) => {
+                btn.textContent = currentQuestion.options[index];
+                btn.disabled = false;
+                btn.classList.remove('correct', 'wrong');
+            });
+            document.getElementById('feedback').textContent = "";
+            document.getElementById('next-button').style.display = "none";
+        }
+
+        function checkAnswer(button) {
+            const currentQuestion = questions[currentQuestionIndex];
+            const buttons = document.querySelectorAll(".option");
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (button.textContent === currentQuestion.correctAnswer) {
+                button.classList.add('correct');
+                document.getElementById('feedback').textContent = "Correct!";
+                document.getElementById('feedback').style.color = "#28a745";
+                score++;
+            } else {
+                button.classList.add('wrong');
+                document.getElementById('feedback').textContent = currentQuestion.explanation;
+                document.getElementById('feedback').style.color = "#dc3545";
+
+                buttons.forEach(btn => {
+                    if (btn.textContent === currentQuestion.correctAnswer) {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
+
+            if (currentQuestionIndex < questions.length - 1) {
+                document.getElementById('next-button').style.display = "block";
+            } else {
+                document.getElementById('result-button').style.display = "block";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function showResults() {
+            const totalQuestions = questions.length;
+            const percentage = Math.round((score / totalQuestions) * 100);
+
+    // Initialize the result box content
+    document.getElementById('question-container').innerHTML = `
+    <div class="result-box">
+        <h2>Quiz Result</h2>
+        <div class="percentage-container">
+            <div class="circular-progress">
+                <span class="progress-value">0%</span>
+            </div>
+            <span class="score-text">Your Score 0 out of ${totalQuestions}</span>
+        </div>
+        <div class="buttons">
+            <button class="tryagain-btn" onclick="restartQuiz()">Try Again</button>
+            <button class="done-btn" onclick="finishQuiz()">Done</button>
+        </div>
+    </div>
+    `;
+
+    let progressValue = 0;
+    let speed = 20;  // Speed of the animation (the lower the value, the faster the animation)
+    
+    // Animate the percentage and color
+    const progressInterval = setInterval(() => {
+        progressValue++;
+        document.querySelector('.progress-value').textContent = `${progressValue}%`;
+        document.querySelector('.circular-progress').style.background = `conic-gradient(
+            #c40094 ${progressValue * 3.6}deg,
+            rgba(255, 255, 255, .4) ${progressValue * 3.6}deg
+        )`;
+        document.querySelector('.score-text').textContent = `Your Score ${Math.round((progressValue / 100) * totalQuestions)} out of ${totalQuestions}`;
+
+        if (progressValue === percentage) {
+            clearInterval(progressInterval);
+        }
+    }, speed);
+}
+
+
+        function restartQuiz() {
+            window.location.reload();
+        }
+
+        function finishQuiz() {
+            window.location.href = 'biochem-2022-T3-SA.html';
+            // Add any additional actions you want to take when the quiz is done
+        }
+
+        // Load the first question when the page is loaded
+        loadQuestion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Biochemistry Term 3 Papers </title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('your-background-image.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    .quiz-container {
+        max-width: 300px;
+        margin: 50px auto;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 8px;
+        color: #fff;
+    }
+    .nav-buttons-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+    .nav-buttons {
+        display: inline-flex;
+    }
+    .nav-buttons button {
+        margin: 5px;
+        padding: 10px 15px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+        flex-shrink: 0;
+    }
+    .nav-buttons button:hover {
+        background: #555;
+    }
+    .nav-buttons button.active {
+        background: #007BFF;
+    }
+    .question {
+        display: none;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .sub-question {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .sub-question p {
+        color: greenyellow;
+    }
+    .answer {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background: rgba(0, 255, 0, 0.1);
+        border-radius: 5px;
+    }
+    .reveal-btn {
+        padding: 5px 10px;
+        background: #007BFF;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    .reveal-btn:hover {
+        background: #0056b3;
+    }
+</style>
+</head>
+<body>
+  
+  <main>
+    <header class="header">
+      <a href="index.html" class="logo"> CBU SOM </a>
+
+  
+      <h2> Totoz Collection ! </h2>
+
+      <a href="biochem-papers-T3.html" class="nav"> Back </a>
+
+
+    </header>
+
+    <div class="container">
+      <img src="Log.png">
+      
+      <div class="quiz-container">
+        <div class="nav-buttons-container">
+            <div class="nav-buttons">
+                <button onclick="showQuestion(1)" class="active">Question 1</button>
+                <button onclick="showQuestion(2)">Question 2</button>
+                <button onclick="showQuestion(3)">Question 3</button>
+                <button onclick="showQuestion(4)">Question 4</button>
+                <button onclick="showQuestion(5)">Question 5</button>
+                <button onclick="showQuestion(6)">Question 6</button>
+                <button onclick="showQuestion(7)">Question 7</button>
+            </div>
+        </div>
+
+        <div id="question1" class="question">
+            <h2>Main Question 1: . A 4-year-old child was born at term, with no congenital anomalies. She is now only 70% of normal body weight. On examination she shows dependent edema of the lower extremities as well as an enlarged abdomen with palpable fluid wave. Her desquamating skin shows irregular areas of depigmentation, and hyperpigmentation. This is a case of severe Protein Energy Malnutrition</h2>
+            <div class="sub-question">
+                <p>1. Name two clinical syndromes of Protein Energy Malnutrition </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer1')">Reveal Answer</button>
+                <div class="answer" id="answer1">
+                    <p> Kwashiokor <br> Marasmus </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>2. Which of the two syndromes tends to occur earlier in life?  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> Kwashiokor </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>3. Name one other macronutrient involved in these syndromes </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer3')">Reveal Answer</button>
+                <div class="answer" id="answer3">
+                    <p>   </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>4. Name the protein that is reduced in one of these syndromes  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer4')">Reveal Answer</button>
+                <div class="answer" id="answer4">
+                    <p>   </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>5. Which one of these syndromes is characterized by muscle wasting and loss of body fat?  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer5')">Reveal Answer</button>
+                <div class="answer" id="answer5">
+                    <p>   </p>
+                </div>
+            </div>
+
+            
+            <!-- Add more sub-questions for question 1 if needed -->
+        </div>
+
+        <div id="question2" class="question">
+            <h2>Main Question 2: The worldwide prevalence of obesity is reaching epidemic proportions. The prevalence of adult obesity has nearly quadrupled, with nearly 40% of the worldwide population classified as overweight and rising numbers of children and adolescents affected. Once thought of as a problem of the developed world, it is now also on the rise in low and middle income countries. Body Mass Index (BMI) is calculated to determine whether someone is obese or not. </h2>
+            <div class="sub-question">
+                <p>1. Calculate the BMI of a patient whose body weight is 70 kg and their height is 100cm (1mark)</p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>2. Name two anthropometric indices used in calculating the Body Mass Index (BMI) [2marks] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>3. In a patient who is too ill and confined to the bed, weight measurements are difficult to obtain. How do you assess the tissue bulk? [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>4. In nutritional support feeding, state one advantage of Enteral feeding over Parental feeding [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>5. Which amino acid will not be provided in parenteral feeding and why not? [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div id="question3" class="question">
+            <h2>Main Question 3: Dental caries is a condition that arises due to consumption of non-milk sugars. These sugars are either intrinsic or extrinsic. When dental enamel is dissolved, some of the sugars are polymerized to form insoluble polysaccharide coating under which bacteria is shielded. </h2>
+            <!-- Sub-questions for question 3 -->
+            <div class="sub-question">
+                <p>1. Metabolism of non-milk extrinsic sugars leads to formation of.....acid [1 mark]  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>2. Which type of sugars are associated with high prevalence of dental caries [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div id="question4" class="question">
+            <h2>Main Question 4: Ataxia with isolated Vit. E deficiency (AVED) A rare neurological progressive disease affecting motor control and movement. Symptoms include slurred speech, difficulty coordinating movements (ataxia), numbness in the hands and feet (peripheral neuropathy) and progressive leg weakness.</h2>
+            <!-- Sub-questions for question 4 -->
+            <div class="sub-question">
+                <p>1. What is the defect in this disease? [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>2. Is this a genetic disease? If so, what is role of the gene product? [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>3. Which lipoprotein is involved in this disease? [1 mark] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+            
+            <div class="sub-question">
+                <p>4. Is Vitamin E toxicity possible? Justify your answer [1.5 marks] </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div id="question5" class="question">
+            <h2>Main Question 5: A group of compounds that exhibits vitamin A activity is known as retinoids.</h2>
+            <!-- Sub-questions for question 5 -->
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <p>1.  </p>
+                <button class="reveal-btn" onclick="toggleAnswer('answer2')">Reveal Answer</button>
+                <div class="answer" id="answer2">
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="question6" class="question">
+            <h2>Main Question 6: What is the role of enzymes in metabolism?</h2>
+            <!-- Sub-questions for question 6 -->
+        </div>
+
+        <div id="question7" class="question">
+            <h2>Main Question 7: Discuss the circulatory system.</h2>
+            <!-- Sub-questions for question 7 -->
+        </div>
+    </div>
+
+      
+    </div>
+
+    <div class="footer">
+      <h1> ToTo </h1>
+    </div>
+   
+  </main>
+
+  <script>
+    // Show the first question by default
+    document.getElementById('question1').style.display = 'block';
+
+    function showQuestion(questionNumber) {
+        // Hide all questions
+        const questions = document.querySelectorAll('.question');
+        questions.forEach(question => {
+            question.style.display = 'none';
+        });
+
+        // Remove active class from all buttons
+        const buttons = document.querySelectorAll('.nav-buttons button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show the selected question
+        const selectedQuestion = document.getElementById(`question${questionNumber}`);
+        selectedQuestion.style.display = 'block';
+
+        // Add active class to the selected button
+        buttons[questionNumber - 1].classList.add('active');
+    }
+
+    function toggleAnswer(answerId) {
+        const answer = document.getElementById(answerId);
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
